@@ -1,0 +1,75 @@
+.animateFadeFromTop {
+    animation: fadeFromTop 0.3s ease-in-out forwards;
+}
+
+.animateFadeToTop {
+    animation: fadeToTop 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-40%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeToTop {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-40%);
+    }
+}
+
+
+
+.blurAnimate {
+    animation: blurAnimation 0.3s ease-in-out;
+}
+
+
+@keyframes blurAnimation {
+    0% {
+        background-color:rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+
+    100% {
+        background-color:rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2px);
+    }
+}
+
+
+.flip-card-inner {
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.flip-the-card {
+    transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.add-perspective {
+    perspective: 1500px;
+}
