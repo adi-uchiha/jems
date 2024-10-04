@@ -1,13 +1,8 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from routes.pdf_routes import router as pdf_router
 from routes.job_routes import router as job_router
 
 app = FastAPI()
-
-
-
-
 app.include_router(pdf_router)
 app.include_router(job_router)
 

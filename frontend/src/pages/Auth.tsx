@@ -1,10 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAuth } from '@/hooks/useAuth';
-import { POSTLoginUser } from '@/services/apiCalls';
+// import { POSTLoginUser } from '@/services/apiCalls';
 import { Label } from '@radix-ui/react-label';
-import { LoaderCircle } from 'lucide-react';
-import React, { useState } from 'react';
+// import { LoaderCircle } from 'lucide-react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logoBig from '@/assets/logo-big.svg';
 import GoogleIcon from '@/assets/google-icon.svg';
@@ -13,41 +13,41 @@ import GithubIcon from '@/assets/github-icon.svg';
 import {
   Card,
   CardContent,
-  CardDescription,
+  // CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 
 const Auth: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const navigate = useNavigate()
-  const { login, user } = useAuth();
+  const { user } = useAuth();
 
   if (user) {
     navigate('/dashboard');
   }
 
-  async function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault()
-    setIsLoading(true)
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
-  }
+  // async function onSubmit(event: React.SyntheticEvent) {
+  //   event.preventDefault()
+  //   setIsLoading(true)
+  //   setTimeout(() => {
+  //     setIsLoading(false)
+  //   }, 3000)
+  // }
 
-  const handleLogin = async () => {
-    console.log('Login clicked');
-    const res = await POSTLoginUser({ email, password });
-    console.log(res);
-    if (res.userdata.token) {
-      login(res.userdata);
-      console.log(user)
-      navigate('/dashboard');
-    }
-  };
+  // const handleLogin = async () => {
+  //   console.log('Login clicked');
+  //   const res = await POSTLoginUser({ email, password });
+  //   console.log(res);
+  //   if (res.userdata.token) {
+  //     login(res.userdata);
+  //     console.log(user)
+  //     navigate('/dashboard');
+  //   }
+  // };
 
 
 
