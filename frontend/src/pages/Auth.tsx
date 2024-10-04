@@ -3,14 +3,17 @@ import { Input } from '@/components/ui/input';
 import { useAuth } from '@/hooks/useAuth';
 import { POSTLoginUser } from '@/services/apiCalls';
 import { Label } from '@radix-ui/react-label';
-import {LoaderCircle } from 'lucide-react';
+import { LoaderCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BMCLogo from '@/assets/BMCLogo.png';
+import logoBig from '@/assets/logo-big.svg';
+import GoogleIcon from '@/assets/google-icon.svg';
+import GithubIcon from '@/assets/github-icon.svg';
 
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -46,75 +49,56 @@ const Auth: React.FC = () => {
     }
   };
 
+
+
   return (
     <div className="flex items-center justify-center min-h-screen ">
-      <Card className='w-[400px]'>
-        <CardHeader>
-        <CardTitle>
-            <img src={BMCLogo} alt="logo" className="h-12 mx-auto" />
+        
+      <Card className='min-w-96'>
+      <CardHeader className="space-y-1">
+      <CardTitle>
+            <img src={logoBig} alt="logo" className="h-12 mx-auto" />
         </CardTitle>
-        {/* <CardDescription>Deploy your new project in one-click.</CardDescription> */}
-        </CardHeader>
-
-        <CardContent>
-        <form
-          className='flex flex-col space-y-4'
-          onSubmit={onSubmit}
-        >
-
-          
-          <div>
-            <Label htmlFor="email" className="">
-              Email
-            </Label>
-            <Input
-            autoFocus
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              id="email"
-              placeholder="name@example.com"
-              type="email"
-              autoCapitalize="none"
-              autoComplete="email"
-              autoCorrect="off"
-              disabled={isLoading}
-              className=""
-            />
-          </div>
-          <div>
-            <Label htmlFor="password" className="">
-              Password
-            </Label>
-            <Input
-              id='password'
-              type="password"
-              placeholder="Password"
-              value={password}
-              autoCapitalize='none'
-              autoComplete='current-password'
-              autoCorrect='off'
-              disabled={isLoading}
-              onChange={(e) => setPassword(e.target.value)}
-              className=""
-            />
-          </div>
-        </form>
-
-        </CardContent>
-        <CardFooter>
-
-          <Button
-            variant={"default"}
-            onClick={handleLogin}
-            disabled={isLoading}
-            className="w-full py-2 px-4 "
-          >
-            {isLoading ? (
-              <LoaderCircle className='animate-spin mr-2 h-4 w-4' />
-            ) : 'Login'}
+        
+      </CardHeader>
+      <CardContent className="grid gap-4">
+        <div className="grid grid-cols-2 gap-6">
+          <Button variant="outline">
+            <div className='mr-2 h-4 w-4'>
+            <img src={GithubIcon} alt="Github" />
+            </div>
+            GitHub
           </Button>
-        </CardFooter>
-      </Card>
+          <Button variant="outline">
+            <div className="mr-2 h-4 w-4">
+            <img src={GoogleIcon} alt="Google" />
+            </div>
+            Google
+          </Button>
+        </div>
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-card px-2 text-muted-foreground">
+              Or continue with
+            </span>
+          </div>
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="email">Email</Label>
+          <Input id="email" type="email" placeholder="m@example.com" />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="password">Password</Label>
+          <Input id="password" type="password" />
+        </div>
+      </CardContent>
+      <CardFooter>
+        <Button className="w-full">Login</Button>
+      </CardFooter>
+    </Card>
     </div>
   );
 };

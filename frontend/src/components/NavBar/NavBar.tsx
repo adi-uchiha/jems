@@ -19,7 +19,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { useAuth } from "@/hooks/useAuth"
 import { MobileNavBar } from "./MobileNavBar"
 import ConfirmationPopUp from "../ConfirmationPopUp"
-import BMCLogo from "@/assets/BMCLogo.png";
+import logoBig from "@/assets/logo-big.svg";
 
 export default function NavBar() {
   const { logout } = useAuth();
@@ -31,7 +31,7 @@ export default function NavBar() {
         <div className="nav-parent lg:flex space-x-8 p-3 items-center justify-between hidden">
           <div className="nav-left flex space-x-8">
             <img className="object-contain h-12 max-w-min"
-              src={BMCLogo} alt="BMC Logo" />
+              src={logoBig} alt="Logo" />
 
             <div className="nav-options flex">
 

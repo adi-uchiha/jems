@@ -1,6 +1,6 @@
 fastapi
-sqlalchemy
-pydantic
-supabase-py
-python-dotenv
 uvicorn
+python-multipart
+supabase
+python-dotenv
+PyPDF2

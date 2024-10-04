@@ -23,7 +23,7 @@ import AdminAvatar from "@/assets/images/admin-avatar.png"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 import { useAuth } from "@/hooks/useAuth"
 import ConfirmationPopUp from "../ConfirmationPopUp"
-import BMCLogo from "@/assets/BMCLogo.png";
+import logoBig from "@/assets/logo-big.svg";
 
 
 const SheetClose = SheetPrimitive.Close;
@@ -37,7 +37,7 @@ export function MobileNavBar() {
       <div className="nav-parent flex justify-between items-center p-3">
         <div className="left">
           <img className="object-contain h-8 max-w-min"
-            src={BMCLogo} alt="BMC Logo" />
+            src={logoBig} alt="Logo" />
         </div>
         <div className="right">
 

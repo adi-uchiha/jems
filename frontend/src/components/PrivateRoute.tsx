@@ -4,6 +4,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 const PrivateRoute = () => {
   console.log("Private Route")
   const { user } = useAuth();
+  console.log(user)
   return user ? <Outlet /> : <Navigate to="/auth" />;
 };
 
